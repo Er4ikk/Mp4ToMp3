@@ -1,0 +1,41 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="400" d:DesignHeight="300"
+        x:Class="Mp4ToMp3.MainWindow"
+        Width="600" Height="250"
+        Title="Mp4ToMp3">
+
+
+
+    
+    <StackPanel>
+        <Grid ShowGridLines="False" Margin="5" 
+          ColumnDefinitions="420, 500"
+          RowDefinitions="Auto, Auto, Auto">
+          <Label  Grid.Row="0" Grid.Column="0" >Select the directory with the .mp4 files you want to convert</Label>
+         <Button Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" Click="GetFolderPath">Search Folder</Button>
+        <Label  Grid.Row="1" Grid.Column="0" >Which format do you want to convert them?</Label>
+        <ComboBox x:Name="ComboBox"  Grid.Row="1" Grid.Column="1" SelectedIndex="0" HorizontalAlignment="Left" MaxDropDownHeight="100"> 
+    <ComboBoxItem>.mp3</ComboBoxItem>
+    <ComboBoxItem>.wav</ComboBoxItem>
+  </ComboBox>
+   <TextBlock Grid.Row="2" Grid.Column="0" Name="Output" Text="" HorizontalAlignment="Left"/>
+       
+    </Grid>
+        
+       
+        <Button HorizontalAlignment="Center" Click="Button_OnClick">Start Conversion</Button>
+        <Border Width="550" Height="150">
+  <ScrollViewer  >
+    <StackPanel>
+      <TextBlock Name="ConversionStatus" HorizontalAlignment="Left" TextWrapping="Wrap"/>
+    </StackPanel>
+  </ScrollViewer>
+</Border>
+
+        
+    </StackPanel>
+    
+</Window>
